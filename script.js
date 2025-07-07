@@ -40,7 +40,7 @@ async function fetchData() {
     countries.forEach((country) => {
       // bitta davlatni html cardini chizib olish
       main.innerHTML += `<div class="country text-left">
-        <div class="flag-container"><img class="flag" src=${country.flag}></div>
+        <div class="flag-container"><img class="flag" src=${country.flags.svg}></div>
         <div class="country-details">
           <h2 class="country-name">${country.name}</h2>
           <span class="font-bigger"><b>Population: </b>${country.population}</span>
@@ -77,7 +77,7 @@ async function fetchData() {
         languageString = languageString.substr(0, languageString.length - 2);
 
         // parametrlarni o'rnatish
-        bigFlag.src = country.flag;
+        bigFlag.src = country.flags.svg;
         cn.innerText = country.name;
         col1Span[0].innerHTML = `<b>Native Name: </b>${country.nativeName}`;
         col1Span[1].innerHTML = `<b>Population: </b>${country.population}`;
@@ -115,7 +115,7 @@ async function fetchData() {
     // qidirish qidiruvda ishtirok etmagan hafrli davlarlarni kardini ko'rinmaydigan qilish
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
-        if (!country.name.toLowerCase().includes(search.value.toLowerCase())) {
+        if (!country.name..common.toLowerCase().includes(search.value.toLowerCase())) {
           countryContainer[j].style.display = "none";
         } else {
           countryContainer[j].style.display = "unset";
