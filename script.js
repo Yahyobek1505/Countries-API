@@ -115,7 +115,7 @@ async function fetchData() {
     // qidirish qidiruvda ishtirok etmagan hafrli davlarlarni kardini ko'rinmaydigan qilish
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
-        if (!country.name..common.toLowerCase().includes(search.value.toLowerCase())) {
+        if (!country.name.common.toLowerCase().includes(search.value.toLowerCase())) {
           countryContainer[j].style.display = "none";
         } else {
           countryContainer[j].style.display = "unset";
