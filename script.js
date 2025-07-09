@@ -42,7 +42,7 @@ async function fetchData() {
       main.innerHTML += `<div class="country text-left">
         <div class="flag-container"><img class="flag" src=${country.flags.svg}></div>
         <div class="country-details">
-          <h2 class="country-name">${country.name}</h2>
+          <h2 class="country-name">${country.name.common}</h2>
           <span class="font-bigger"><b>Population: </b>${country.population}</span>
           <span class="font-bigger"><b>Region: </b>${country.region}</span>
           <span class="font-bigger"><b>Capital: </b>${country.capital}</span>
@@ -78,8 +78,8 @@ async function fetchData() {
 
         // parametrlarni o'rnatish
         bigFlag.src = country.flags.svg;
-        cn.innerText = country.name;
-        col1Span[0].innerHTML = `<b>Native Name: </b>${country.nativeName}`;
+        cn.innerText = country.name.common;
+        col1Span[0].innerHTML = `<b>Native Name: </b>${country.nativeName.official}`;
         col1Span[1].innerHTML = `<b>Population: </b>${country.population}`;
         col1Span[2].innerHTML = `<b>Region: </b>${country.region}`;
         col1Span[3].innerHTML = `<b>Sub Region: </b>${country.subregion}`;
